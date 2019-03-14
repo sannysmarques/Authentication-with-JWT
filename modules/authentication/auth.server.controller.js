@@ -2,6 +2,8 @@ const express = require('express');
 //const jwt = require('jsonwebtoken');
 const Auth = require('./auth.server.model');
 
+//const tokenString = 'P@as5c0DE';
+
 
 /*  Sobre método de autenticação:
  *  Descrição:
@@ -9,9 +11,8 @@ const Auth = require('./auth.server.model');
  *      [POST]: 
  *          req: { 
  *              body{
- *                  login: String, 
- *                  email: String, 
- *                  senha: String (required)
+ *                  loginEmail: String, (required)
+ *                  senha: String       (required)
  *              } 
  *          }  
  *          res: 
@@ -22,7 +23,7 @@ const Auth = require('./auth.server.model');
 const autenticar = async (req, res) => {
     try {
         //->veriricação da entrada
-        const auth = await Auth.findOne({'email': req.body.email, 'login':req.body.login});
+        const auth = await Auth.findOne({'email': req.body.loginEmail, 'login':req.body.loginEmail}); //verificar consulta
         //->verificação do retorno do find
         console.log(auth);
         //await auth.populate('User');

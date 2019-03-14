@@ -4,20 +4,25 @@ var app = express();
 
 // connection
 if(!module.parent){
-    app.listen(6969, function() {
-      console.log('listening on port 6969!');
+    app.listen(6565, function() {
+      console.log('listening on port 6565!');
     });
 }
 
-/*// mongo ODM
+// mongo ODM
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://' + process.env.URL_BD + '/cbvd-backend');
 mongoose.Promise = global.Promise;
-*/
 
-/*// CORS
+
+// CORS
 const cors = require('cors');
-*/
+app.use(cors());
+
+// body parser
+const bodyParser = require('body-parser');
+app.use(bodyParser.json({limit: '15mb'}));
+app.use(bodyParser.urlencoded({limit: '15mb', extended: true, parameterLimit:15000}));
 
 // routers
 const router1 = express.Router();
