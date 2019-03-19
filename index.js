@@ -25,10 +25,13 @@ app.use(bodyParser.json({limit: '15mb'}));
 app.use(bodyParser.urlencoded({limit: '15mb', extended: true, parameterLimit:15000}));
 
 // routers
+const router0 = express.Router();
 const router1 = express.Router();
 const router2 = express.Router();
 
+
 /**/
+app.use(router0.get('/', (req, res) => {res.send('Authentication with JWT - Server ON')}))
 const authRouter = require('./modules/authentication/auth.server.routes');
 app.use('/auth', authRouter(router1));
 const userRouter = require('./modules/user/user.server.routes');
