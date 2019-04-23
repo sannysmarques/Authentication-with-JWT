@@ -8,7 +8,7 @@ const Auth = require('../authentication/auth.server.model');
 
 /*  Sobre método de cadastro:
  *  Descrição:
- *  Rota: /user/cadastro
+ *  Rota: /user/cadastrar
  *      [POST]: 
  *          req: { 
  *              body{
@@ -23,8 +23,7 @@ const Auth = require('../authentication/auth.server.model');
 const cadastrar = (req, res) => {
     console.log('Cadastro OK');
     console.log(req.body);
-    return res.send(req.body);
-/*
+
     //validação dos dados enviados
     const newUser = new User(req.body);
 console.log(newUser);
@@ -42,7 +41,7 @@ console.log(newAuth);
         });
     })
     return res.status(201).send(newUser);
-*/
+
 };
 
 
