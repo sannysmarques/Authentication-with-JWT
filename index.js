@@ -11,7 +11,7 @@ if(!module.parent){
 
 // mongo ODM
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://' + process.env.URL_BD + '/cbvd-backend');
+mongoose.connect('mongodb://' + process.env.URL_BD + '/populate');
 mongoose.Promise = global.Promise;
 
 

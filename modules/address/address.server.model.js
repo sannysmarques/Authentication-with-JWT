@@ -1,11 +1,6 @@
 const mongoose = require('mongoose');
 
 const addressSchema = new mongoose.Schema({
-    dono: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-    },
-
     rua: {
         type: String,
         required: true

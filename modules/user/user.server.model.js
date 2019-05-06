@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
+    endereco: {
+        type: Schema.Types.ObjectId,
+        ref: 'Address'
+    },
 
     nome: {
         type: String,
